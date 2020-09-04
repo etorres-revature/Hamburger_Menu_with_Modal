@@ -1,7 +1,7 @@
 @import url("https://fonts.google.com/specimen/Lato?query=lato&sidebar.open=true&selection.family=Lato");
 
 :root {
-  --modal-duration: 1s;
+  --modal-duration: 1.5s;
   --primary-color: #30336b;
   --secondary-color: #be2edd;
 }
@@ -15,6 +15,12 @@ body {
   margin: 0;
 }
 
+body.show-nav {
+  /* width of nav */
+  transform: translateX(275px);
+  transition: transform 0.75 ease;
+}
+
 nav {
   background-color: var(--primary-color);
   border-right: 2px solid rgba(200, 200, 200, 0.1);
@@ -22,7 +28,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 275px;
   height: 100vh;
   z-index: 10;
   transform: translateX(-100%);
@@ -87,7 +93,7 @@ input[type="submit"] {
   border-radius: 8px;
   color: #fff;
   cursor: pointer;
-  padding: 8px 12 px;
+  padding: 8px 12px;
 }
 
 button:focus {
@@ -101,75 +107,94 @@ button:focus {
   left: 20px;
 }
 
-.cta-btn {
-    padding: 12px 30px;
-    font-size: 20px;
+.open-modal-btn {
+  padding: 12px 30px;
+  font-size: 20px;
 }
 
 .container {
-    padding: 15px;
-    margin: 0 auto;
-    max-width: 100%;
-    width: 800px;
+  padding: 15px;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 800px;
 }
 
 .modal-container {
-    background-color: rgba(0,0,0, 0.6);
-    /* display: none; */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-container.show-modal {
+  display: block;
 }
 
 .modal {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    position: absolute;
-    overflow: hidden;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100%;
-    width: 400px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 400px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
 }
 
 .modal-header {
-    background: var(--primary-color);
-    color: #fff;
-    padding: 15px;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 15px;
 }
 
 .modal-header h3 {
-    margin: 0;
-    border-bottom: 1px solid #333;
+  margin: 0;
+  border-bottom: 1px solid #333;
 }
 
 .modal-content {
-    padding: 20px
+  padding: 20px;
 }
 
 .modal-form div {
-margin: 15px 0;
+  margin: 15px 0;
 }
 
 .modal-form label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .modal-form .form-input {
-    padding: 8px;
-    width: 100%;
+  padding: 8px;
+  width: 100%;
+}
+
+.submit-modal-btn {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .close-modal-btn {
-    background: transparent;
-    font-size: 25px;
-    position: absolute;
-    top: 9px;
-    right: 9px;
+  background: transparent;
+  font-size: 25px;
+  position: absolute;
+  top: 9px;
+  right: 9px;
 }
 
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
