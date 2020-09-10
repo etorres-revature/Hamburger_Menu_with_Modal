@@ -2,15 +2,15 @@
 
  A website that has a [Hamburge Menu with Modal](https://etorres-revature.github.io/Hamburger_Menu_with_Modal/).
 
- Home Page:
+ ## Home Page:
 
- ![HAMBURGER closed](./images/screenshots/hamburger-open.png)
+ ![HAMBURGER closed](./images/screenshots/hamburger-closed.png)
 
- Hamburger Menu Open:
+ ## Hamburger Menu Open:
 
- ![HAMBURGER open](./images/screenshots/hamburger-closed.png)
+ ![HAMBURGER open](./images/screenshots/hamburger-open.png)
 
- Modal: 
+ ## Modal: 
 
  ![MODAL](./images/screenshots/modal.png)
 
